@@ -1,3 +1,4 @@
+import { ListEnquetteComponent } from './enquette/list-enquette/list-enquette.component';
 import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { EnvoyerDemandeComponent } from './demande/envoyer-demande/envoyer-demande.component';
@@ -20,6 +21,8 @@ const routes: Routes = [
   //users
   { path: 'users', component: ListUsersComponent },
   { path: 'users/add', component: AjoutUserComponent },
+  //enquette
+  { path: 'enquette', component: ListEnquetteComponent },
 ];
 
 @NgModule({

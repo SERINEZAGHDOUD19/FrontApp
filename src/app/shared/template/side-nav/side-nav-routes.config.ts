@@ -13,7 +13,7 @@ export const ROUTES: SideNavInterface[] = [
     title: 'Clients',
     iconType: 'nzIcon',
     iconTheme: 'outline',
-    icon: 'appstore',
+    icon: 'user',
     data: {
       role: 'ADMIN',
     },
@@ -43,7 +43,7 @@ export const ROUTES: SideNavInterface[] = [
     title: 'Utilisateurs',
     iconType: 'nzIcon',
     iconTheme: 'outline',
-    icon: 'appstore',
+    icon: 'setting',
     data: { role: 'ADMIN' },
     submenu: [
       {
@@ -71,7 +71,7 @@ export const ROUTES: SideNavInterface[] = [
     title: 'Demandes',
     iconType: 'nzIcon',
     iconTheme: 'outline',
-    icon: 'appstore',
+    icon: 'book',
     data: {},
     submenu: [
       {
@@ -96,30 +96,22 @@ export const ROUTES: SideNavInterface[] = [
   },
   {
     path: '',
-    title: 'Demandes',
+    title: 'Enquetes',
     iconType: 'nzIcon',
     iconTheme: 'outline',
-    icon: 'appstore',
+    icon: 'question',
     data: { role: 'ADMIN' },
 
     submenu: [
       {
-        path: 'admin/demandes',
-        title: 'Liste des demandes',
+        path: 'admin/enquette',
+        title: 'Liste des enquetes',
         iconType: 'nzIcon',
         icon: 'table',
         iconTheme: 'outline',
         submenu: [],
         data: {},
       },
-      /*     {
-        path: 'admin/demande/add',
-        title: 'Ajout demandes',
-        iconType: 'nzIcon',
-        icon: 'plus',
-        iconTheme: 'outline',
-        submenu: [],
-      }, */
     ],
   },
 ];

@@ -1,3 +1,4 @@
+import { ListEnquetteComponent } from './enquette/list-enquette/list-enquette.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { TableComponent } from './clients/table/table.component';
 import { EnvoyerDemandeComponent } from './demande/envoyer-demande/envoyer-demande.component';
@@ -32,6 +33,7 @@ import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
     TableComponent,
     ListUsersComponent,
     AjoutUserComponent,
+    ListEnquetteComponent,
   ],
   imports: [
     CommonModule,
