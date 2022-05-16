@@ -1,13 +1,7 @@
 import { SideNavInterface } from '../../interfaces/side-nav.type';
-export const ROUTES: SideNavInterface[] = [
-  /*   {
-    path: 'admin/dashboard',
-    title: 'Dashboard',
-    iconType: 'nzIcon',
-    iconTheme: 'outline',
-    icon: 'dashboard',
-    submenu: [],
-  }, */
+let role = localStorage.getItem('ROLE');
+let menu = [];
+let admin = [
   {
     path: '',
     title: 'Clients',
@@ -115,3 +109,41 @@ export const ROUTES: SideNavInterface[] = [
     ],
   },
 ];
+let client = [
+  {
+    path: '',
+    title: 'Clients',
+    iconType: 'nzIcon',
+    iconTheme: 'outline',
+    icon: 'user',
+    data: {
+      role: 'ADMIN',
+    },
+    submenu: [
+      {
+        path: 'admin/clients',
+        title: 'Liste des clients',
+        iconType: 'nzIcon',
+        icon: 'table',
+        iconTheme: 'outline',
+        submenu: [],
+        data: {},
+      },
+      {
+        path: 'admin/clients/add',
+        title: 'Ajout Client',
+        iconType: 'nzIcon',
+        icon: 'plus',
+        iconTheme: 'outline',
+        submenu: [],
+        data: {},
+      },
+    ],
+  },
+];
+if (role == 'ADMIN') {
+  menu = admin;
+}else {
+  menu = client
+}
+export const ROUTES: SideNavInterface[] = menu;

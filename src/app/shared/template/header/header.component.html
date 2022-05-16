@@ -1,40 +1,55 @@
 <div class="header">
-    <div class="logo logo-dark">
-        <a href="">
-            <img src="assets/images/logo/logo.jpg" alt="Logo" width="80" height="80">
-            <img class="logo-fold" src="assets/images/logo/logo-fold.png" alt="Logo">
+  <div class="logo logo-dark">
+    <a href="">
+      <img
+        src="assets/images/logo/logo.jpg"
+        alt="Logo"
+        width="80"
+        height="80"
+      />
+      <img
+        class="logo-fold"
+        src="assets/images/logo/logo-fold.png"
+        alt="Logo"
+      />
+    </a>
+  </div>
+  <div class="logo logo-white">
+    <a href="">
+      <img
+        src="assets/images/logo/logo.jpg"
+        width="20"
+        height="20"
+        alt="Logo"
+      />
+      <img class="logo-fold" src="assets/images/logo/logo.jpg" alt="Logo" />
+    </a>
+  </div>
+  <div class="nav-wrap">
+    <ul class="nav-left">
+      <li class="desktop-toggle">
+        <a (click)="toggleFold()">
+          <i
+            nz-icon
+            [nzType]="isFolded ? 'menu-unfold' : 'menu-fold'"
+            theme="outline"
+          ></i>
         </a>
-    </div>
-    <div class="logo logo-white">
-        <a href="">
-            <img src="assets/images/logo/logo.jpg"  width="20" height="20" alt="Logo">
-            <img class="logo-fold" src="assets/images/logo/logo.jpg" alt="Logo">
+      </li>
+      <li class="mobile-toggle">
+        <a (click)="toggleExpand()">
+          <i
+            nz-icon
+            [nzType]="isExpand ? 'menu-fold' : 'menu-unfold'"
+            theme="outline"
+          ></i>
         </a>
-    </div>
-    <div class="nav-wrap">
-        <ul class="nav-left">
-            <li class="desktop-toggle">
-                <a (click)="toggleFold()">
-                    <i nz-icon [nzType]="isFolded? 'menu-unfold':'menu-fold'" theme="outline"></i>
-                </a>
-            </li>
-            <li class="mobile-toggle">
-                <a (click)="toggleExpand()">
-                    <i nz-icon [nzType]="isExpand? 'menu-fold': 'menu-unfold'" theme="outline"></i>
-                </a>
-            </li>
-        </ul>
-        <ul class="nav-right">
-            <li>
-                <a (click)="quickViewToggle()">
-                    <i nz-icon nzType="appstore" theme="outline"></i>
-                </a>
-                <nz-drawer [nzWidth]="280" nzTitle="Quick View" [nzClosable]="false" [nzVisible]="quickViewVisible" nzPlacement="right" (nzOnClose)="quickViewToggle()">
-                    <ng-container *nzDrawerContent>
-                        <app-quick-view></app-quick-view>
-                    </ng-container>
-                </nz-drawer>
-            </li>
-        </ul>
-    </div>
+      </li>
+    </ul>
+    <ul class="nav-right">
+      <button nz-button nzType="default" nzShape="circle" (click)="logout()">
+        <i nz-icon nzType="logout"></i>
+      </button>
+    </ul>
+  </div>
 </div>

@@ -12,13 +12,14 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {}
 
   login(user: any) {
+    localStorage.setItem('ROLE','');
     return this.http.post(this.host + '/login', user, { observe: 'response' });
   }
   saveToken(jwt: any) {
     this.jwToken = jwt;
     localStorage.setItem('token', jwt);
     let jwtHelper = new JwtHelperService();
-    this.roles = jwtHelper.decodeToken(this.jwToken).groups;
+    this.roles = jwtHelper.decodeToken(this.jwToken);
   }
   loadToken() {
     this.jwToken = localStorage.getItem('token');
@@ -36,7 +37,7 @@ export class AuthenticationService {
     if (this.jwToken == null) {
       this.loadToken();
     }
-    console.log('jwt pour get' + this.jwToken);
+    console.log('getUsersByType' + this.jwToken);
     return this.http.get(this.host + '/user/users/' + type, {
       headers: new HttpHeaders({ Authorization: this.jwToken }),
     });
@@ -54,13 +55,19 @@ export class AuthenticationService {
     this.jwToken = null;
     localStorage.removeItem('token');
   }
-  isAdmin() {
-    for (let r of this.roles) {
+  GetRole() {
+    if (this.jwToken == null) {
+      this.loadToken();
+    }
+    let jwtHelper = new JwtHelperService();
+    this.roles = jwtHelper.decodeToken(this.jwToken);
+    return this.roles;
+    /* for (let r of this.roles) {
       if (r.authority == 'ADMIN') {
         return true;
       }
     }
-    return false;
+    return false; */
   }
   saveGroup(group: any) {
     let headers = new HttpHeaders();

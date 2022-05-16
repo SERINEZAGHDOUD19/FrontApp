@@ -26,7 +26,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'login',
+        path: '',
         component: Login3Component,
         data: {
             title: 'Login'
