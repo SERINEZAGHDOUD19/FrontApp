@@ -1,0 +1,35 @@
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.userName ? data.userName : "" }}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ data.groups[0].privileged }}</td>
+      <td>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button
+          nz-button
+          nzType="primary"
+          (click)="edit(data.id)"
+        >
+          Edit
+        </button>
+        <button
+          nz-button
+          nzType="primary"
+          nzDanger
+          (click)="delete(data.id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

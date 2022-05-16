@@ -41,7 +41,7 @@ export class AuthenticationService {
       headers: new HttpHeaders({ Authorization: this.jwToken }),
     });
   }
-  getUsers(type: any) {
+  getUsers() {
     if (this.jwToken == null) {
       this.loadToken();
     }

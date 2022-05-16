@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css'],
+  selector: 'app-ajout-user',
+  templateUrl: './ajout-user.component.html',
+  styleUrls: ['./ajout-user.component.css'],
 })
-export class AddComponent implements OnInit {
+export class AjoutUserComponent implements OnInit {
   form: FormGroup;
-  client: any[] = [];
+  users: any[] = [];
   constructor() {}
 
   ngOnInit(): void {
@@ -23,7 +22,6 @@ export class AddComponent implements OnInit {
       email: new FormControl('', [Validators.required]),
     });
   }
-
   get f() {
     return this.form.controls;
   }
@@ -38,7 +36,7 @@ export class AddComponent implements OnInit {
       password: this.form.value.password,
       dateCreated: new Date(),
     };
-/*
+    /*
     this.DemandeService.saveDemande(data).subscribe((res) => {
       this.router.navigateByUrl('/admin/demande');
     }); */

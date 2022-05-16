@@ -1,3 +1,5 @@
+import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
+import { ListUsersComponent } from './users/list-users/list-users.component';
 import { EnvoyerDemandeComponent } from './demande/envoyer-demande/envoyer-demande.component';
 import { AjoutDemandeComponent } from './demande/ajout-demande/ajout-demande.component';
 import { ListDemandeComponent } from './demande/list-demande/list-demande.component';
@@ -15,6 +17,9 @@ const routes: Routes = [
   { path: 'demande', component: ListDemandeComponent },
   { path: 'demande/add', component: AjoutDemandeComponent },
   { path: 'demande/envoyer/:ID', component: EnvoyerDemandeComponent },
+  //users
+  { path: 'users', component: ListUsersComponent },
+  { path: 'users/add', component: AjoutUserComponent },
 ];
 
 @NgModule({
