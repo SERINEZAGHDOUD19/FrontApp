@@ -1,1 +1,33 @@
-<p>table works!</p>
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.firstName + (data.lastName ? data.lastName : "") }}</td>
+      <td>{{ data.email }}</td>
+      <td>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button
+          nz-button
+          nzType="primary"
+          (click)="edit(data.id)"
+        >
+          Edit
+        </button>
+        <button
+          nz-button
+          nzType="primary"
+          nzDanger
+          (click)="delete(data.id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

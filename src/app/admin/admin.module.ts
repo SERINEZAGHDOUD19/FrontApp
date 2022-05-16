@@ -1,3 +1,4 @@
+import { TableComponent } from './clients/table/table.component';
 import { EnvoyerDemandeComponent } from './demande/envoyer-demande/envoyer-demande.component';
 import { AjoutDemandeComponent } from './demande/ajout-demande/ajout-demande.component';
 import { ListDemandeComponent } from './demande/list-demande/list-demande.component';
@@ -18,9 +19,10 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 
 @NgModule({
-  declarations: [AddComponent, ListDemandeComponent,AjoutDemandeComponent, EnvoyerDemandeComponent],
+  declarations: [AddComponent, ListDemandeComponent,AjoutDemandeComponent, EnvoyerDemandeComponent,TableComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -38,6 +40,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NzSelectModule,
     NzAlertModule,
     NzInputNumberModule,
+    NzDatePickerModule
   ],
 })
 export class AdminModule {}
