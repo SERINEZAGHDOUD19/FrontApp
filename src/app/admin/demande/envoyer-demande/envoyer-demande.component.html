@@ -6,6 +6,28 @@
     nzSubtitle="Envoyer demande"
   >
   </nz-page-header>
+  <form [formGroup]="form" (ngSubmit)="submit()" nz-form style="margin: 10px">
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="Demande">Employee</nz-form-label>
+      <nz-select
+        formControlName="demande_user_id"
+        nzPlaceHolder="Select a type"
+        [(ngModel)]="selectedValue"
+      >
+        <nz-option
+          *ngFor="let item of employe"
+          [nzLabel]="item.userName"
+          [nzValue]="item.id"
+        ></nz-option>
+      </nz-select>
+    </nz-form-item>
 
-
+    <nz-form-item>
+      <nz-form-control [nzSpan]="12" [nzOffset]="5">
+        <button nz-button nzType="primary" [disabled]="!form.valid">
+          Submit
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
 </div>

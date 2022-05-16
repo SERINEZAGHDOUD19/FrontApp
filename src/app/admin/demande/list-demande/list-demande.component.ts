@@ -33,9 +33,6 @@ export class ListDemandeComponent implements OnInit {
   }
 
   EnvoyerDemande(id: any) {
-    /* this.demandeService.EnvoyerDemande(id).subscribe((res) => {
-      this.ngOnInit();
-    }); */
-    this.router.navigateByUrl('/admin/demande/envoyer');
+    this.router.navigateByUrl('/admin/demande/envoyer/' + id);
   }
 }

@@ -32,6 +32,15 @@ export class AuthenticationService {
       headers: new HttpHeaders({ Authorization: this.jwToken }),
     });
   }
+  getUsersByType(type: any) {
+    if (this.jwToken == null) {
+      this.loadToken();
+    }
+    console.log('jwt pour get' + this.jwToken);
+    return this.http.get(this.host + '/user/users/' + type, {
+      headers: new HttpHeaders({ Authorization: this.jwToken }),
+    });
+  }
   logout() {
     this.jwToken = null;
     localStorage.removeItem('token');

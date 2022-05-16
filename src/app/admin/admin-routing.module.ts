@@ -14,7 +14,7 @@ const routes: Routes = [
   //demande
   { path: 'demande', component: ListDemandeComponent },
   { path: 'demande/add', component: AjoutDemandeComponent },
-  { path: 'demande/envoyer', component: EnvoyerDemandeComponent },
+  { path: 'demande/envoyer/:ID', component: EnvoyerDemandeComponent },
 ];
 
 @NgModule({

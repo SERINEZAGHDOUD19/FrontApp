@@ -40,6 +40,15 @@ export class DemandeService {
     });
   }
 
+  getDemande(idDemande: any) {
+    if (this.jwToken == null) {
+      this.loadToken();
+    }
+    return this.httpClient.get(this.apiURL + '/' + idDemande, {
+      headers: new HttpHeaders({ Authorization: this.jwToken }),
+    });
+  }
+
   saveDemande(demande: any) {
     if (this.jwToken == null) {
       this.loadToken();
