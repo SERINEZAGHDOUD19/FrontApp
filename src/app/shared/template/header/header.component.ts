@@ -12,6 +12,7 @@ export class HeaderComponent {
   quickViewVisible: boolean = false;
   isFolded: boolean;
   isExpand: boolean;
+  public role: any = [];
 
   constructor(private themeService: ThemeConstantService, private authService : AuthenticationService, private router: Router) {}
 
@@ -22,6 +23,10 @@ export class HeaderComponent {
     this.themeService.isExpandChanges.subscribe(
       (isExpand) => (this.isExpand = isExpand)
     );
+  //  localStorage.removeItem('ROLE');
+
+    //console.log(this.role.groups[0].authority);
+    //localStorage.setItem('ROLE',this.role.groups[0].authority);
   }
 
   toggleFold() {
@@ -72,6 +77,6 @@ export class HeaderComponent {
   ];
   logout() {
     this.authService.logout();
-    this.router.navigateByUrl('/landingPage');
+    this.router.navigateByUrl('/homePage');
   }
 }

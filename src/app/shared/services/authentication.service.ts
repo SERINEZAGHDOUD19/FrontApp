@@ -8,11 +8,10 @@ export class AuthenticationService {
   private host: string = 'http://localhost:8080';
   private jwt: string = '';
   private jwToken: any;
-  private roles: Array<any> = [];
+  private roles: any = [];
   constructor(private http: HttpClient) {}
 
   login(user: any) {
-    localStorage.setItem('ROLE','');
     return this.http.post(this.host + '/login', user, { observe: 'response' });
   }
   saveToken(jwt: any) {
@@ -20,6 +19,8 @@ export class AuthenticationService {
     localStorage.setItem('token', jwt);
     let jwtHelper = new JwtHelperService();
     this.roles = jwtHelper.decodeToken(this.jwToken);
+
+    localStorage.setItem('ROLE', this.roles.groups[0].authority);
   }
   loadToken() {
     this.jwToken = localStorage.getItem('token');
@@ -54,6 +55,7 @@ export class AuthenticationService {
   logout() {
     this.jwToken = null;
     localStorage.removeItem('token');
+    localStorage.removeItem('ROLE');
   }
   GetRole() {
     if (this.jwToken == null) {
@@ -61,7 +63,7 @@ export class AuthenticationService {
     }
     let jwtHelper = new JwtHelperService();
     this.roles = jwtHelper.decodeToken(this.jwToken);
-    return this.roles;
+    return this.roles.groups[0].authority;
     /* for (let r of this.roles) {
       if (r.authority == 'ADMIN') {
         return true;

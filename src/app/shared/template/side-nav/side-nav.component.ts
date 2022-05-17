@@ -1,8 +1,8 @@
+import { Router } from '@angular/router';
 import { AuthenticationService } from './../../services/authentication.service';
 import { Component } from '@angular/core';
 import { ROUTES } from './side-nav-routes.config';
 import { ThemeConstantService } from '../../services/theme-constant.service';
-
 @Component({
   selector: 'app-sidenav',
   templateUrl: './side-nav.component.html',
@@ -16,11 +16,20 @@ export class SideNavComponent {
 
   constructor(
     private themeService: ThemeConstantService,
+    private router: Router,
+
     private authService: AuthenticationService
   ) {}
 
   ngOnInit(): void {
+    this.role = this.authService.GetRole();
+    /*
+
+    //console.log(this.role.groups[0].authority);
+    localStorage.setItem('ROLE', this.role.groups[0].authority); */
     this.menuItems = ROUTES.filter((menuItem) => menuItem);
+    // console.log(this.menuItems);
+
     this.themeService.isMenuFoldedChanges.subscribe(
       (isFolded) => (this.isFolded = isFolded)
     );
@@ -30,10 +39,11 @@ export class SideNavComponent {
     this.themeService.isSideNavDarkChanges.subscribe(
       (isDark) => (this.isSideNavDark = isDark)
     );
-    this.role = this.authService.GetRole();
-
-    //console.log(this.role.groups[0].authority);
-    localStorage.setItem('ROLE',this.role.groups[0].authority);
+    this.router
+      .navigateByUrl('/admin', { skipLocationChange: true })
+      .then(() => {
+        this.router.navigate(['admin']);
+      });
   }
 
   closeMobileMenu(): void {
