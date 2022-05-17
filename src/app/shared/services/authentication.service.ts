@@ -64,12 +64,6 @@ export class AuthenticationService {
     let jwtHelper = new JwtHelperService();
     this.roles = jwtHelper.decodeToken(this.jwToken);
     return this.roles.groups[0].authority;
-    /* for (let r of this.roles) {
-      if (r.authority == 'ADMIN') {
-        return true;
-      }
-    }
-    return false; */
   }
   saveGroup(group: any) {
     let headers = new HttpHeaders();
@@ -84,5 +78,23 @@ export class AuthenticationService {
   }
   getJwtToken() {
     return localStorage.getItem('token');
+  }
+
+  saveUser(user: any) {
+    let headers = new HttpHeaders();
+    headers.append('Authorization', this.jwToken);
+    return this.http.post(this.host + '/user', user, {
+      headers: new HttpHeaders({ Authorization: this.jwToken }),
+    });
+  }
+  addUserToGroupe(username: any, role: any) {
+    let headers = new HttpHeaders();
+    headers.append('Authorization', this.jwToken);
+    return this.http.post(
+      this.host + '/group/addRoleToUser/' + username + '/' + role,
+      {
+        headers: new HttpHeaders({ Authorization: this.jwToken }),
+      }
+    );
   }
 }

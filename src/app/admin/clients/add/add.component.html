@@ -25,7 +25,6 @@
       </div>
     </nz-form-item>
 
-
     <nz-form-item>
       <nz-form-label nzRequired nzFor="lastName">Prénom</nz-form-label>
       <input id="lastName" type="text" nz-input formControlName="lastName" />
@@ -42,14 +41,26 @@
         </div>
       </div>
     </nz-form-item>
-
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="userName">userName</nz-form-label>
+      <input id="userName" type="text" nz-input formControlName="userName" />
+      <div
+        *ngIf="f.userName.touched && f.userName.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.userName.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="userName is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
     <nz-form-item>
       <nz-form-label nzRequired nzFor="cin">cin</nz-form-label>
       <input id="cin" type="text" nz-input formControlName="cin" />
-      <div
-        *ngIf="f.cin.touched && f.cin.invalid"
-        class="alert alert-danger"
-      >
+      <div *ngIf="f.cin.touched && f.cin.invalid" class="alert alert-danger">
         <div *ngIf="f.cin.errors?.required">
           <nz-alert
             nzType="error"
@@ -63,10 +74,7 @@
     <nz-form-item>
       <nz-form-label nzRequired nzFor="city">Region</nz-form-label>
       <input id="city" type="text" nz-input formControlName="city" />
-      <div
-        *ngIf="f.city.touched && f.city.invalid"
-        class="alert alert-danger"
-      >
+      <div *ngIf="f.city.touched && f.city.invalid" class="alert alert-danger">
         <div *ngIf="f.city.errors?.required">
           <nz-alert
             nzType="error"
@@ -78,7 +86,9 @@
     </nz-form-item>
 
     <nz-form-item>
-      <nz-form-label nzRequired nzFor="dateNaissanced">Date de Naissance</nz-form-label>
+      <nz-form-label nzRequired nzFor="dateNaissanced"
+        >Date de Naissance</nz-form-label
+      >
       <nz-form-control [nzSm]="16" [nzXs]="24">
         <nz-date-picker formControlName="dateNaissanced"></nz-date-picker>
       </nz-form-control>
@@ -113,7 +123,22 @@
         </div>
       </div>
     </nz-form-item>
-
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+      <input id="password" type="text" nz-input formControlName="password" />
+      <div
+        *ngIf="f.password.touched && f.password.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.password.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="password is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
     <nz-form-item>
       <nz-form-control [nzSpan]="12" [nzOffset]="5">
         <button nz-button nzType="primary" [disabled]="!form.valid">

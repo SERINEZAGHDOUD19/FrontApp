@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../shared/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,7 +11,10 @@ import { Router } from '@angular/router';
 export class AddComponent implements OnInit {
   form: FormGroup;
   client: any[] = [];
-  constructor() {}
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -21,6 +25,7 @@ export class AddComponent implements OnInit {
       dateNaissanced: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
+      userName: new FormControl('', [Validators.required]),
     });
   }
 
@@ -36,11 +41,16 @@ export class AddComponent implements OnInit {
       dateNaissanced: this.form.value.dateNaissanced,
       email: this.form.value.email,
       password: this.form.value.password,
+      userName: this.form.value.userName,
       dateCreated: new Date(),
     };
-/*
-    this.DemandeService.saveDemande(data).subscribe((res) => {
-      this.router.navigateByUrl('/admin/demande');
-    }); */
+
+    this.authService.saveUser(data).subscribe((res) => {
+      this.authService
+        .addUserToGroupe(this.form.value.userName, 'CLIENT')
+        .subscribe((result) => {
+          this.router.navigateByUrl('/admin/client');
+        });
+    });
   }
 }
