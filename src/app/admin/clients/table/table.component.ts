@@ -13,12 +13,13 @@ export class TableComponent implements OnInit {
     private router: Router
   ) {}
   public listOfData: any = [];
-
+  role : any = "";
   ngOnInit(): void {
     this.authService.getUsersByType('CLIENT').subscribe((res) => {
       this.listOfData = res;
       console.log(res);
     });
+    this.role = this.authService.GetRole();
   }
   edit(id: any) {
     this.router.navigateByUrl('/admin/clients/edit/' + id);

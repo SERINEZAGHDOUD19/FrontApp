@@ -22,8 +22,6 @@ export class ListEnquetteComponent implements OnInit {
       this.listOfData = dataa;
       console.log(dataa);
     });
-
-
   }
   Valider(id: any) {}
   Refuser(id: any) {}

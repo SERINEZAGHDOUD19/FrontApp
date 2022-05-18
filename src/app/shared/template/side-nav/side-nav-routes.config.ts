@@ -110,6 +110,32 @@ export const ROUTES: SideNavInterface[] = [
       },
     ],
   },
+  //SUPERADMIN
+
+  {
+    path: 'admin/clients',
+    title: 'Clients',
+    iconType: 'nzIcon',
+    iconTheme: 'outline',
+    icon: 'user',
+    data: {
+      role: 'SUPERADMIN',
+    },
+    submenu: [],
+  },
+  {
+    path: 'admin/demande',
+    title: 'Demandes',
+    iconType: 'nzIcon',
+    iconTheme: 'outline',
+    icon: 'user',
+    data: {
+      role: 'SUPERADMIN',
+    },
+    submenu: [],
+  },
+
+
 
   //client
   {
@@ -178,13 +204,13 @@ export const ROUTES: SideNavInterface[] = [
 
   //employee
   {
-    path: '',
+    path: 'admin/clients',
     title: 'Clients',
     iconType: 'nzIcon',
     iconTheme: 'outline',
     icon: 'user',
     data: {
-      role: 'EMPLOYEE',
+      role: 'EMPLOYE',
     },
     submenu: [],
   },
@@ -195,7 +221,7 @@ export const ROUTES: SideNavInterface[] = [
     iconTheme: 'outline',
     icon: 'user',
     data: {
-      role: 'EMPLOYEE',
+      role: 'EMPLOYE',
     },
     submenu: [],
   },
@@ -206,32 +232,7 @@ export const ROUTES: SideNavInterface[] = [
     iconTheme: 'outline',
     icon: 'user',
     data: {
-      role: 'EMPLOYEE',
-    },
-    submenu: [],
-  },
-
-  //SUPERADMIN
-
-  {
-    path: '',
-    title: 'Clients',
-    iconType: 'nzIcon',
-    iconTheme: 'outline',
-    icon: 'user',
-    data: {
-      role: 'EMPLOYEE',
-    },
-    submenu: [],
-  },
-  {
-    path: '',
-    title: 'Demandes',
-    iconType: 'nzIcon',
-    iconTheme: 'outline',
-    icon: 'user',
-    data: {
-      role: 'EMPLOYEE',
+      role: 'EMPLOYE',
     },
     submenu: [],
   },

@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../../../shared/services/authentication.service';
 import { Router } from '@angular/router';
 import { DemandeService } from './../../../shared/services/demande.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDemandeComponent implements OnInit {
   public listOfData: any = [];
-  constructor(private demandeService: DemandeService, private router: Router) {}
+  constructor(
+    private demandeService: DemandeService,
+    private router: Router,
+    private authService: AuthenticationService
+  ) {}
+  role: any = '';
 
   ngOnInit(): void {
     this.getAll();
@@ -19,6 +25,7 @@ export class ListDemandeComponent implements OnInit {
       this.listOfData = dataa;
       console.log(dataa);
     });
+    this.role = this.authService.GetRole();
   }
   accepteDemande(id: any) {
     this.demandeService.AccepterDemande(id).subscribe((res) => {

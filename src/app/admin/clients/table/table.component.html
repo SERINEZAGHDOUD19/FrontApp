@@ -4,15 +4,15 @@
       <th>Client</th>
       <th>User name</th>
       <th>Email</th>
-      <th>Action</th>
+      <th *[ngIf]="role !== 'ADMIN'">Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let data of basicTable.data">
-      <td>{{ data.firstName + (data.lastName ? data.lastName : "") }}</td>
+      <td>{{ data.firstName + (data.lastName ? data.lastName : "") }} {{role}}</td>
       <td>{{ data.userName }}</td>
       <td>{{ data.email }}</td>
-      <td>
+      <td *[ngIf]="role !== 'ADMIN'">
         <nz-divider nzType="vertical"></nz-divider>
         <button
           nz-button

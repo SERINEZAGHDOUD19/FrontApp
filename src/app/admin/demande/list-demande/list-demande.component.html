@@ -19,7 +19,7 @@
         <button
           nz-button
           nzType="primary"
-          *ngIf="data.state === 0"
+          *ngIf="data.state === 0 && role == 'ADMIN'"
           (click)="accepteDemande(data.id)"
         >
           Accepte
@@ -27,7 +27,7 @@
         <button
           nz-button
           nzType="primary"
-          *ngIf="data.state === 0"
+          *ngIf="data.state === 0 && role == 'ADMIN'"
           nzDanger
           (click)="refusDemande(data.id)"
         >
@@ -36,7 +36,7 @@
         <button
           nz-button
           nzType="default"
-          *ngIf="data.state === 0"
+          *ngIf="data.state == 1 && role == 'SUPERADMIN'"
           (click)="EnvoyerDemande(data.id)"
         >
           Envoyer Demande
