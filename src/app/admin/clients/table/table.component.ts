@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthenticationService } from './../../../shared/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent implements OnInit {
-  constructor(private authService: AuthenticationService) {}
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
   public listOfData: any = [];
 
   ngOnInit(): void {
@@ -16,7 +20,17 @@ export class TableComponent implements OnInit {
       console.log(res);
     });
   }
-  edit(id: any) {}
+  edit(id: any) {
+    this.router.navigateByUrl('/admin/clients/edit/' + id);
+  }
 
-  delete(id: any) {}
+  delete(id: any) {
+    this.authService.deleteUser(id).subscribe((res) => {
+      console.log(res);
+
+      this.router.navigateByUrl('/admin/clients').then(() => {
+        this.ngOnInit();
+      });
+    });
+  }
 }

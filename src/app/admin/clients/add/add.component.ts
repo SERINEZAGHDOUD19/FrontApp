@@ -48,9 +48,8 @@ export class AddComponent implements OnInit {
     this.authService.saveUser(data).subscribe((res) => {
       this.authService
         .addUserToGroupe(this.form.value.userName, 'CLIENT')
-        .subscribe((result) => {
-          this.router.navigateByUrl('/admin/client');
-        });
+        .subscribe((result) => {});
+      this.router.navigateByUrl('/admin/clients');
     });
   }
 }

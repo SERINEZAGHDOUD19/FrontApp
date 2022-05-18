@@ -13,7 +13,7 @@ import { AddComponent } from './clients/add/add.component';
 const routes: Routes = [
   { path: 'clients/add', component: AddComponent },
   { path: 'clients', component: TableComponent },
-  { path: 'clients/edit/:clientID', component: EditComponent },
+  { path: 'clients/edit/:ID', component: EditComponent },
   //demande
   { path: 'demande', component: ListDemandeComponent },
   { path: 'demande/add', component: AjoutDemandeComponent },

@@ -80,6 +80,7 @@ export class AuthenticationService {
     return localStorage.getItem('token');
   }
 
+  //User CLIENT ADMIN SUPERADMIN EMPLOYEE
   saveUser(user: any) {
     let headers = new HttpHeaders();
     headers.append('Authorization', this.jwToken);
@@ -96,5 +97,29 @@ export class AuthenticationService {
         headers: new HttpHeaders({ Authorization: this.jwToken }),
       }
     );
+  }
+
+  getUser(id: any) {
+    let headers = new HttpHeaders();
+    headers.append('Authorization', this.jwToken);
+    return this.http.get(this.host + '/user/' + id, {
+      headers: new HttpHeaders({ Authorization: this.jwToken }),
+    });
+  }
+
+  editUser(user: any) {
+    let headers = new HttpHeaders();
+    headers.append('Authorization', this.jwToken);
+    return this.http.put(this.host + '/user', user, {
+      headers: new HttpHeaders({ Authorization: this.jwToken }),
+    });
+  }
+
+  deleteUser(id: any) {
+    let headers = new HttpHeaders();
+    headers.append('Authorization', this.jwToken);
+    return this.http.delete(this.host + '/user/delete/' + id, {
+      headers: new HttpHeaders({ Authorization: this.jwToken }),
+    });
   }
 }
