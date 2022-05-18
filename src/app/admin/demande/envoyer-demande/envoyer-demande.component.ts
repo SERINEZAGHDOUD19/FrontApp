@@ -44,8 +44,8 @@ export class EnvoyerDemandeComponent implements OnInit {
   }
   submit() {
     let data = {
-      idDemande: this.id,
-      matFiscal: this.form.value.demande_user_id,
+      idDemande: parseInt(this.demande.id),
+      idEmp: this.form.value.demande_user_id,
     };
 
     this.demandeService.EnvoyerDemande(data).subscribe((res) => {
