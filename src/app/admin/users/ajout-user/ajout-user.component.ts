@@ -45,6 +45,8 @@ export class AjoutUserComponent implements OnInit {
       userName: this.form.value.userName,
       dateCreated: new Date(),
     };
+    console.log(this.form.value);
+
     this.authService.saveUser(data).subscribe((res) => {
       this.authService
         .addUserToGroupe(this.form.value.userName, this.form.value.type)

@@ -1,3 +1,4 @@
+import { ModifierUserComponent } from './users/modifier-user/modifier-user.component';
 import { EditComponent } from './clients/edit/edit.component';
 import { ListEnquetteComponent } from './enquette/list-enquette/list-enquette.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
@@ -35,7 +36,8 @@ import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
     ListUsersComponent,
     AjoutUserComponent,
     ListEnquetteComponent,
-    EditComponent
+    EditComponent,
+    ModifierUserComponent
   ],
   imports: [
     CommonModule,

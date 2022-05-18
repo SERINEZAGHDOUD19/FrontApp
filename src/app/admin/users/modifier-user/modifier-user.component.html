@@ -1,1 +1,211 @@
-<p>modifier-user works!</p>
+<div style="background-color: #ffffff">
+  <nz-page-header
+    class="site-page-header"
+    nzBackIcon
+    nzTitle="User"
+    nzSubtitle="Ajout User"
+  >
+  </nz-page-header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" nz-form style="margin: 10px">
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="firstName">Nom</nz-form-label>
+      <input
+        id="firstName"
+        type="text"
+        nz-input
+        formControlName="firstName"
+        [(ngModel)]="users.firstName"
+      />
+      <div
+        *ngIf="f.firstName.touched && f.firstName.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.firstName.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="firstName is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="lastName">Prénom</nz-form-label>
+      <input
+        id="lastName"
+        type="text"
+        nz-input
+        formControlName="lastName"
+        [(ngModel)]="users.lastName"
+      />
+      <div
+        *ngIf="f.lastName.touched && f.lastName.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.lastName.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="lastName is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="userName">userName</nz-form-label>
+      <input
+        id="userName"
+        type="text"
+        nz-input
+        formControlName="userName"
+        [(ngModel)]="users.userName"
+      />
+      <div
+        *ngIf="f.userName.touched && f.userName.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.userName.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="userName is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="type">User Role</nz-form-label>
+      <nz-select
+        formControlName="type"
+        nzPlaceHolder="Select a type"
+        [(ngModel)]="selectedValue"
+      >
+        <nz-option nzLabel="ADMIN" nzValue="ADMIN"></nz-option>
+        <nz-option nzLabel="SUPERADMIN" nzValue="SUPERADMIN"></nz-option>
+        <nz-option nzLabel="EMPLOYE" nzValue="EMPLOYE"></nz-option>
+        <nz-option nzLabel="CLIENT" nzValue="CLIENT"></nz-option>
+      </nz-select>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="cin">cin</nz-form-label>
+      <input
+        id="cin"
+        type="text"
+        nz-input
+        formControlName="cin"
+        [(ngModel)]="users.cin"
+      />
+      <div *ngIf="f.cin.touched && f.cin.invalid" class="alert alert-danger">
+        <div *ngIf="f.cin.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="cin is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="city">Region</nz-form-label>
+      <input
+        id="city"
+        type="text"
+        nz-input
+        formControlName="city"
+        [(ngModel)]="users.city"
+      />
+      <div *ngIf="f.city.touched && f.city.invalid" class="alert alert-danger">
+        <div *ngIf="f.city.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="city is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="dateNaissanced"
+        >Date de Naissance</nz-form-label
+      >
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <nz-date-picker
+          formControlName="dateNaissanced"
+          [(ngModel)]="users.dateNaissanced"
+        ></nz-date-picker>
+      </nz-form-control>
+
+      <div
+        *ngIf="f.dateNaissanced.touched && f.dateNaissanced.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.dateNaissanced.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="dateNaissanced is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="email">email</nz-form-label>
+      <input
+        id="email"
+        type="email"
+        nz-input
+        formControlName="email"
+        [(ngModel)]="users.email"
+      />
+      <div
+        *ngIf="f.email.touched && f.email.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.email.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="email is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="password">password</nz-form-label>
+      <input
+        id="password"
+        type="password"
+        nz-input
+        formControlName="password"
+        [(ngModel)]="users.password"
+      />
+      <div
+        *ngIf="f.password.touched && f.password.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.password.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="password is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzSpan]="12" [nzOffset]="5">
+        <button nz-button nzType="primary" [disabled]="!form.valid">
+          Submit
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>

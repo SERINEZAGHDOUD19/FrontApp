@@ -45,11 +45,12 @@ export class EditComponent implements OnInit {
     console.log(this.form.value);
     let data = this.form.value;
     data['id'] = this.id;
-    console.log(data);
 
-    /*   this.authService.editUser(this.form.value).subscribe((res) => {
-      console.log('product updated successfully!');
-      this.router.navigateByUrl('product/index');
-    }); */
+    this.authService.editUser(this.form.value).subscribe((res) => {
+      this.authService
+        .addUserToGroupe(this.form.value.userName, 'CLIENT')
+        .subscribe((result) => {});
+      this.router.navigateByUrl('/admin/clients');
+    });
   }
 }
