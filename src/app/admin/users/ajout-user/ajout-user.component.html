@@ -43,6 +43,36 @@
     </nz-form-item>
 
     <nz-form-item>
+      <nz-form-label nzRequired nzFor="userName">userName</nz-form-label>
+      <input id="userName" type="text" nz-input formControlName="userName" />
+      <div
+        *ngIf="f.userName.touched && f.userName.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.userName.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="userName is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="type">User Role</nz-form-label>
+      <nz-select
+        formControlName="type"
+        nzPlaceHolder="Select a type"
+        [(ngModel)]="selectedValue"
+      >
+        <nz-option nzLabel="ADMIN" nzValue="ADMIN"></nz-option>
+        <nz-option nzLabel="SUPERADMIN" nzValue="SUPERADMIN"></nz-option>
+        <nz-option nzLabel="EMPLOYEE" nzValue="EMPLOYEE"></nz-option>
+        <nz-option nzLabel="CLIENT" nzValue="CLIENT"></nz-option>
+      </nz-select>
+    </nz-form-item>
+    <nz-form-item>
       <nz-form-label nzRequired nzFor="cin">cin</nz-form-label>
       <input id="cin" type="text" nz-input formControlName="cin" />
       <div *ngIf="f.cin.touched && f.cin.invalid" class="alert alert-danger">
