@@ -1,0 +1,21 @@
+Board admin:
+Liste client ( crud : delete update add w consulter client)
+Liste utilisateur ( les employés avec leurs rôles crud )
+Liste demande ( avec quelle client associé) avec boutton accepter ou refuser demande ( pour l'admin seulement) et l'admin ou le superviseur peut affecter une demande au un employé pour le traiter .
+Les enquêtes avec une boutton valider ou refuser.
+
+Board superviseur :
+Liste client 
+Liste demande pour les affecteur au client
+
+Board employé
+Liste client 
+Liste demande lui affecté pour traiter l'enquête 
+Formulaire de traitement d'enquête
+
+Board client
+Leur profile
+Leur solde de enquête
+L'état de leur demande 
+Formulaire de demande 
+Chaque acteur peut télécharger le rapport

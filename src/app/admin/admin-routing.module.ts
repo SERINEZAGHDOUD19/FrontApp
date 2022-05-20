@@ -1,3 +1,7 @@
+import { AjoutDemandeConnectedComponent } from './demande/ajout-demande-connected/ajout-demande-connected.component';
+import { ClientDemandeComponent } from './demande/client-demande/client-demande.component';
+import { SoldeComponent } from './enquette/solde/solde.component';
+import { ProfileComponent } from './profile/profile.component';
 import { TraiterEnquetteComponent } from './demande/traiter-enquette/traiter-enquette.component';
 import { EmployeDemandeComponent } from './demande/employe-demande/employe-demande.component';
 import { ModifierUserComponent } from './users/modifier-user/modifier-user.component';
@@ -20,8 +24,10 @@ const routes: Routes = [
   //demande
   { path: 'demande', component: ListDemandeComponent },
   { path: 'demande/add', component: AjoutDemandeComponent },
+  { path: 'demande/client/add', component: AjoutDemandeConnectedComponent },
   { path: 'demande/envoyer/:ID', component: EnvoyerDemandeComponent },
   { path: 'demande/employe', component: EmployeDemandeComponent },
+  { path: 'demande/client', component: ClientDemandeComponent },
   { path: 'demande/employe/traiter/:ID', component: TraiterEnquetteComponent },
 
   //users
@@ -30,6 +36,10 @@ const routes: Routes = [
   { path: 'users/edit/:ID', component: ModifierUserComponent },
   //enquette
   { path: 'enquette', component: ListEnquetteComponent },
+  { path: 'enquette/solde', component: SoldeComponent },
+
+  //profile
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({

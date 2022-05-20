@@ -34,6 +34,7 @@ export class EditComponent implements OnInit {
       password: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       userName: new FormControl('', [Validators.required]),
+      matriculeFiscale: new FormControl('', [Validators.required]),
     });
   }
 

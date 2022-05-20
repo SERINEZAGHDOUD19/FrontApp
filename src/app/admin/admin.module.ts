@@ -1,3 +1,7 @@
+import { AjoutDemandeConnectedComponent } from './demande/ajout-demande-connected/ajout-demande-connected.component';
+import { ClientDemandeComponent } from './demande/client-demande/client-demande.component';
+import { SoldeComponent } from './enquette/solde/solde.component';
+import { ProfileComponent } from './profile/profile.component';
 import { TraiterEnquetteComponent } from './demande/traiter-enquette/traiter-enquette.component';
 import { EmployeDemandeComponent } from './demande/employe-demande/employe-demande.component';
 import { ModifierUserComponent } from './users/modifier-user/modifier-user.component';
@@ -27,6 +31,7 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,11 @@ import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
     EditComponent,
     ModifierUserComponent,
     EmployeDemandeComponent,
-    TraiterEnquetteComponent
+    TraiterEnquetteComponent,
+    ProfileComponent,
+    SoldeComponent,
+    ClientDemandeComponent,
+    AjoutDemandeConnectedComponent,
   ],
   imports: [
     CommonModule,
@@ -61,6 +70,7 @@ import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
     NzAlertModule,
     NzInputNumberModule,
     NzDatePickerModule,
+    NzDescriptionsModule,
   ],
 })
 export class AdminModule {}

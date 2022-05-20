@@ -1,0 +1,30 @@
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Path Rapport</th>
+      <th>Demande ID</th>
+      <th>Status Demande</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.id }}</td>
+      <td>{{ data.pathRapport }}</td>
+      <td>{{ data.demande.id }}</td>
+      <td>{{ data.demande.state === 0 ? "Encours" : "Accpted" }}</td>
+      <td>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button
+          nz-button
+          nzType="primary"
+          *ngIf="data.state !== 0"
+          (click)="consulter(data.pathRapport)"
+        >
+          Consulter rapport
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

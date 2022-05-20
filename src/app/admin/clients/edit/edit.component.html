@@ -10,7 +10,13 @@
   <form [formGroup]="form" (ngSubmit)="submit()" nz-form style="margin: 10px">
     <nz-form-item>
       <nz-form-label nzRequired nzFor="firstName">Nom</nz-form-label>
-      <input id="firstName" type="text" nz-input formControlName="firstName"   [(ngModel)]="client.firstName"  />
+      <input
+        id="firstName"
+        type="text"
+        nz-input
+        formControlName="firstName"
+        [(ngModel)]="client.firstName"
+      />
       <div
         *ngIf="f.firstName.touched && f.firstName.invalid"
         class="alert alert-danger"
@@ -27,7 +33,13 @@
 
     <nz-form-item>
       <nz-form-label nzRequired nzFor="lastName">Prénom</nz-form-label>
-      <input id="lastName" type="text" nz-input formControlName="lastName" [(ngModel)]="client.lastName" />
+      <input
+        id="lastName"
+        type="text"
+        nz-input
+        formControlName="lastName"
+        [(ngModel)]="client.lastName"
+      />
       <div
         *ngIf="f.lastName.touched && f.lastName.invalid"
         class="alert alert-danger"
@@ -42,8 +54,38 @@
       </div>
     </nz-form-item>
     <nz-form-item>
+      <nz-form-label nzRequired nzFor="matriculeFiscale"
+        >matriculeFiscale</nz-form-label
+      >
+      <input
+        id="matriculeFiscale"
+        type="text"
+        nz-input
+        formControlName="matriculeFiscale"
+        [(ngModel)]="client.matriculeFiscale"
+      />
+      <div
+        *ngIf="f.matriculeFiscale.touched && f.matriculeFiscale.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.matriculeFiscale.errors?.required">
+          <nz-alert
+            nzType="error"
+            nzShowIcon
+            nzMessage="matriculeFiscale is required."
+          ></nz-alert>
+        </div>
+      </div>
+    </nz-form-item>
+    <nz-form-item>
       <nz-form-label nzRequired nzFor="userName">userName</nz-form-label>
-      <input id="userName" type="text" nz-input formControlName="userName" [(ngModel)]="client.userName" />
+      <input
+        id="userName"
+        type="text"
+        nz-input
+        formControlName="userName"
+        [(ngModel)]="client.userName"
+      />
       <div
         *ngIf="f.userName.touched && f.userName.invalid"
         class="alert alert-danger"
@@ -59,7 +101,13 @@
     </nz-form-item>
     <nz-form-item>
       <nz-form-label nzRequired nzFor="cin">cin</nz-form-label>
-      <input id="cin" type="text" nz-input formControlName="cin" [(ngModel)]="client.cin" />
+      <input
+        id="cin"
+        type="text"
+        nz-input
+        formControlName="cin"
+        [(ngModel)]="client.cin"
+      />
       <div *ngIf="f.cin.touched && f.cin.invalid" class="alert alert-danger">
         <div *ngIf="f.cin.errors?.required">
           <nz-alert
@@ -73,7 +121,13 @@
 
     <nz-form-item>
       <nz-form-label nzRequired nzFor="city">Region</nz-form-label>
-      <input id="city" type="text" nz-input formControlName="city"  [(ngModel)]="client.city"/>
+      <input
+        id="city"
+        type="text"
+        nz-input
+        formControlName="city"
+        [(ngModel)]="client.city"
+      />
       <div *ngIf="f.city.touched && f.city.invalid" class="alert alert-danger">
         <div *ngIf="f.city.errors?.required">
           <nz-alert
@@ -90,7 +144,10 @@
         >Date de Naissance</nz-form-label
       >
       <nz-form-control [nzSm]="16" [nzXs]="24">
-        <nz-date-picker formControlName="dateNaissanced"  [(ngModel)]="client.dateNaissanced"></nz-date-picker>
+        <nz-date-picker
+          formControlName="dateNaissanced"
+          [(ngModel)]="client.dateNaissanced"
+        ></nz-date-picker>
       </nz-form-control>
 
       <div
@@ -109,7 +166,13 @@
 
     <nz-form-item>
       <nz-form-label nzRequired nzFor="email">email</nz-form-label>
-      <input id="email" type="email" nz-input formControlName="email" [(ngModel)]="client.email" />
+      <input
+        id="email"
+        type="email"
+        nz-input
+        formControlName="email"
+        [(ngModel)]="client.email"
+      />
       <div
         *ngIf="f.email.touched && f.email.invalid"
         class="alert alert-danger"
@@ -125,7 +188,13 @@
     </nz-form-item>
     <nz-form-item>
       <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
-      <input id="password" type="password" nz-input formControlName="password" [(ngModel)]="client.password"/>
+      <input
+        id="password"
+        type="password"
+        nz-input
+        formControlName="password"
+        [(ngModel)]="client.password"
+      />
       <div
         *ngIf="f.password.touched && f.password.invalid"
         class="alert alert-danger"

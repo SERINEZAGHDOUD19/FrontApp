@@ -26,6 +26,7 @@ export class AddComponent implements OnInit {
       password: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       userName: new FormControl('', [Validators.required]),
+      matriculeFiscale: new FormControl('', [Validators.required]),
     });
   }
 
@@ -42,6 +43,7 @@ export class AddComponent implements OnInit {
       email: this.form.value.email,
       password: this.form.value.password,
       userName: this.form.value.userName,
+      matriculeFiscale: this.form.value.matriculeFiscale,
       dateCreated: new Date(),
     };
 

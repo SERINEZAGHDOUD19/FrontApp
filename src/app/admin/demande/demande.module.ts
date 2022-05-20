@@ -8,6 +8,8 @@ import { AjoutDemandeComponent } from './ajout-demande/ajout-demande.component';
 import { EnvoyerDemandeComponent } from './envoyer-demande/envoyer-demande.component';
 import { EmployeDemandeComponent } from './employe-demande/employe-demande.component';
 import { TraiterEnquetteComponent } from './traiter-enquette/traiter-enquette.component';
+import { ClientDemandeComponent } from './client-demande/client-demande.component';
+import { AjoutDemandeConnectedComponent } from './ajout-demande-connected/ajout-demande-connected.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { TraiterEnquetteComponent } from './traiter-enquette/traiter-enquette.co
     EnvoyerDemandeComponent,
     EmployeDemandeComponent,
     TraiterEnquetteComponent,
+    ClientDemandeComponent,
+    AjoutDemandeConnectedComponent,
   ],
   imports: [CommonModule, DemandeRoutingModule, NzTableModule],
 })

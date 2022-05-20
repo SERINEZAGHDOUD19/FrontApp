@@ -137,7 +137,7 @@ export const ROUTES: SideNavInterface[] = [
 
   //client
   {
-    path: '',
+    path: 'admin/profile',
     title: 'Profile',
     iconType: 'nzIcon',
     iconTheme: 'outline',
@@ -148,7 +148,7 @@ export const ROUTES: SideNavInterface[] = [
     submenu: [],
   },
   {
-    path: '',
+    path: 'admin/enquette/solde',
     title: 'Solde enquette',
     iconType: 'nzIcon',
     iconTheme: 'outline',
@@ -169,8 +169,8 @@ export const ROUTES: SideNavInterface[] = [
     },
     submenu: [
       {
-        path: 'admin/demande/etat',
-        title: 'Etat du demande',
+        path: 'admin/demande/client',
+        title: 'Mes Demandes',
         iconType: 'nzIcon',
         icon: 'table',
         iconTheme: 'outline',
@@ -178,8 +178,8 @@ export const ROUTES: SideNavInterface[] = [
         data: { role: 'CLIENT' },
       },
       {
-        path: 'admin/demande/add',
-        title: 'Etat du demande',
+        path: 'admin/demande/client/add',
+        title: 'Ajout Demande',
         iconType: 'nzIcon',
         icon: 'table',
         iconTheme: 'outline',
@@ -188,7 +188,7 @@ export const ROUTES: SideNavInterface[] = [
       },
     ],
   },
-  {
+/*   {
     path: '',
     title: 'Télécharger enquette',
     iconType: 'nzIcon',
@@ -199,7 +199,7 @@ export const ROUTES: SideNavInterface[] = [
     },
     submenu: [],
   },
-
+ */
   //employee
   {
     path: 'admin/clients',

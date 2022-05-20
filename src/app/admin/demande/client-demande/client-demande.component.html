@@ -1,0 +1,18 @@
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Date Creation</th>
+      <th>Date Accpted</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.nameSociete }}</td>
+      <td>{{ data.dateCreated }}</td>
+      <td>{{ data.dateAccpted }}</td>
+      <td>{{ data.state === 0 ? "Encours" : "Accpted" }}</td>
+    </tr>
+  </tbody>
+</nz-table>

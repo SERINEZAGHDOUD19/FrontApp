@@ -1,0 +1,32 @@
+<div style="background-color: #ffffff">
+  <nz-page-header
+    class="site-page-header"
+    nzBackIcon
+    nzTitle="Demande"
+    nzSubtitle="Ajout demande"
+  >
+  </nz-page-header>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" nz-form style="margin: 10px">
+
+    <nz-form-item >
+      <nz-form-label nzRequired nzFor="name_societe">nom societe</nz-form-label>
+      <input
+        id="demande_name_societe"
+        type="text"
+        nz-input
+        formControlName="demande_name_societe"
+      />
+
+    </nz-form-item>
+
+
+    <nz-form-item>
+      <nz-form-control [nzSpan]="12" [nzOffset]="5">
+        <button nz-button nzType="primary" [disabled]="!form.valid">
+          Submit
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
