@@ -1,0 +1,30 @@
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Date Creation</th>
+      <th>Date Accpted</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.nameSociete }}</td>
+      <td>{{ data.dateCreated }}</td>
+      <td>{{ data.dateAccpted }}</td>
+      <td>{{ data.state === 0 ? "Encours" : "Accpted" }}</td>
+      <td>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button
+          nz-button
+          nzType="primary"
+          *ngIf="data.state === 3"
+          (click)="Traite(data.id)"
+        >
+          Traiter Enquette
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

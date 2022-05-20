@@ -76,12 +76,16 @@ export class DemandeService {
       headers: new HttpHeaders({ Authorization: this.jwToken }),
     });
   }
-  EnvoyerDemande(demande: any) {
+  EnvoyerDemande(demande: any, emp: any) {
     if (this.jwToken == null) {
       this.loadToken();
     }
-    return this.httpClient.post(this.apiURL + '/envoyerUneDemande', demande, {
-      headers: new HttpHeaders({ Authorization: this.jwToken }),
-    });
+    return this.httpClient.post(
+      this.apiURL + '/envoyerUneDemande/' + demande + '/' + emp,
+      {
+        headers: new HttpHeaders({ Authorization: this.jwToken }),
+      }
+    );
   }
+
 }

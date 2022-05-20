@@ -48,8 +48,10 @@ export class EnvoyerDemandeComponent implements OnInit {
       idEmp: this.form.value.demande_user_id,
     };
 
-    this.demandeService.EnvoyerDemande(data).subscribe((res) => {
-      this.router.navigateByUrl('/admin/demande');
-    });
+    this.demandeService
+      .EnvoyerDemande(data.idDemande, data.idEmp)
+      .subscribe((res) => {
+        this.router.navigateByUrl('/admin/demande');
+      });
   }
 }

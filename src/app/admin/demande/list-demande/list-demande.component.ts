@@ -18,6 +18,7 @@ export class ListDemandeComponent implements OnInit {
   role: any = '';
 
   ngOnInit(): void {
+
     this.getAll();
   }
   getAll() {

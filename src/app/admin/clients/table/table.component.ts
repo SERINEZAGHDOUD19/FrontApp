@@ -13,7 +13,7 @@ export class TableComponent implements OnInit {
     private router: Router
   ) {}
   public listOfData: any = [];
-  role : any = "";
+  role: any = '';
   ngOnInit(): void {
     this.authService.getUsersByType('CLIENT').subscribe((res) => {
       this.listOfData = res;

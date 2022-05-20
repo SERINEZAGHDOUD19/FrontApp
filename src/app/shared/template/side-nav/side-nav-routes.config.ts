@@ -135,8 +135,6 @@ export const ROUTES: SideNavInterface[] = [
     submenu: [],
   },
 
-
-
   //client
   {
     path: '',
@@ -215,19 +213,8 @@ export const ROUTES: SideNavInterface[] = [
     submenu: [],
   },
   {
-    path: '',
-    title: 'Demande',
-    iconType: 'nzIcon',
-    iconTheme: 'outline',
-    icon: 'user',
-    data: {
-      role: 'EMPLOYE',
-    },
-    submenu: [],
-  },
-  {
-    path: '',
-    title: 'Traiter Enquette',
+    path: 'admin/demande/employe',
+    title: 'Demandes',
     iconType: 'nzIcon',
     iconTheme: 'outline',
     icon: 'user',

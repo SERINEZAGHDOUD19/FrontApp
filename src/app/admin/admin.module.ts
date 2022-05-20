@@ -1,3 +1,5 @@
+import { TraiterEnquetteComponent } from './demande/traiter-enquette/traiter-enquette.component';
+import { EmployeDemandeComponent } from './demande/employe-demande/employe-demande.component';
 import { ModifierUserComponent } from './users/modifier-user/modifier-user.component';
 import { EditComponent } from './clients/edit/edit.component';
 import { ListEnquetteComponent } from './enquette/list-enquette/list-enquette.component';
@@ -37,7 +39,9 @@ import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
     AjoutUserComponent,
     ListEnquetteComponent,
     EditComponent,
-    ModifierUserComponent
+    ModifierUserComponent,
+    EmployeDemandeComponent,
+    TraiterEnquetteComponent
   ],
   imports: [
     CommonModule,

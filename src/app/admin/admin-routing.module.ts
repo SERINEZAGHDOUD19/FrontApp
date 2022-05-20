@@ -1,3 +1,5 @@
+import { TraiterEnquetteComponent } from './demande/traiter-enquette/traiter-enquette.component';
+import { EmployeDemandeComponent } from './demande/employe-demande/employe-demande.component';
 import { ModifierUserComponent } from './users/modifier-user/modifier-user.component';
 import { ListEnquetteComponent } from './enquette/list-enquette/list-enquette.component';
 import { AjoutUserComponent } from './users/ajout-user/ajout-user.component';
@@ -19,6 +21,9 @@ const routes: Routes = [
   { path: 'demande', component: ListDemandeComponent },
   { path: 'demande/add', component: AjoutDemandeComponent },
   { path: 'demande/envoyer/:ID', component: EnvoyerDemandeComponent },
+  { path: 'demande/employe', component: EmployeDemandeComponent },
+  { path: 'demande/employe/traiter/:ID', component: TraiterEnquetteComponent },
+
   //users
   { path: 'users', component: ListUsersComponent },
   { path: 'users/add', component: AjoutUserComponent },

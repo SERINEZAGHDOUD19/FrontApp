@@ -41,14 +41,18 @@ export class EnquetteService {
     });
   }
 
-  effectuerUneEnquete(idDemande: any) {
+  effectuerUneEnquete(idDemande: any, data: any) {
     if (this.jwToken == null) {
       this.loadToken();
     }
 
-    return this.httpClient.get(this.apiURL + '/effectuerUneEnquete/' + idDemande, {
-      headers: new HttpHeaders({ Authorization: this.jwToken }),
-    });
+    return this.httpClient.post(
+      this.apiURL + '/effectuerUneEnquete/' + idDemande,
+      data,
+      {
+        headers: new HttpHeaders({ Authorization: this.jwToken }),
+      }
+    );
   }
   AccepterDemande(idDemande: any) {
     if (this.jwToken == null) {
@@ -59,5 +63,4 @@ export class EnquetteService {
       headers: new HttpHeaders({ Authorization: this.jwToken }),
     });
   }
-
 }

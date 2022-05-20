@@ -6,12 +6,16 @@ import { ListDemandeComponent } from './list-demande/list-demande.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { AjoutDemandeComponent } from './ajout-demande/ajout-demande.component';
 import { EnvoyerDemandeComponent } from './envoyer-demande/envoyer-demande.component';
+import { EmployeDemandeComponent } from './employe-demande/employe-demande.component';
+import { TraiterEnquetteComponent } from './traiter-enquette/traiter-enquette.component';
 
 @NgModule({
   declarations: [
     ListDemandeComponent,
     AjoutDemandeComponent,
     EnvoyerDemandeComponent,
+    EmployeDemandeComponent,
+    TraiterEnquetteComponent,
   ],
   imports: [CommonModule, DemandeRoutingModule, NzTableModule],
 })

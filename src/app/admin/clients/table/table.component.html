@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let data of basicTable.data">
-      <td>{{ data.firstName + (data.lastName ? data.lastName : "") }} {{role}}</td>
+      <td>{{ data.firstName + (data.lastName ? data.lastName : "") }}</td>
       <td>{{ data.userName }}</td>
       <td>{{ data.email }}</td>
       <td *[ngIf]="role !== 'ADMIN'">

@@ -6,7 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthenticationService {
   private host: string = 'http://localhost:8080';
-  private jwt: string = '';
+  private ConnectedUser: string = '';
   private jwToken: any;
   private roles: any = [];
   constructor(private http: HttpClient) {}
@@ -119,6 +119,14 @@ export class AuthenticationService {
     let headers = new HttpHeaders();
     headers.append('Authorization', this.jwToken);
     return this.http.delete(this.host + '/user/delete/' + id, {
+      headers: new HttpHeaders({ Authorization: this.jwToken }),
+    });
+  }
+
+  getConnectedUser() {
+    let headers = new HttpHeaders();
+    headers.append('Authorization', this.jwToken);
+    return this.http.get(this.host + '/user/userConnect' , {
       headers: new HttpHeaders({ Authorization: this.jwToken }),
     });
   }

@@ -19,7 +19,7 @@
         <nz-option nzLabel="Entreprise" nzValue="1"></nz-option>
       </nz-select>
 
-      <!-- s
+      <!--
         *ngIf="f.demande_type.touched && f.category_id.invalid"
         class="alert alert-danger"
       >
@@ -32,6 +32,22 @@
         </div>
       </div> -->
     </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired nzFor="Demande">Client</nz-form-label>
+      <nz-select
+        formControlName="client"
+        nzPlaceHolder="Select a Client"
+        [(ngModel)]="selectedClient"
+        (ngModelChange)="changeCustomer($event)"
+      >
+        <nz-option
+          *ngFor="let item of clients"
+          [nzLabel]="item.firstName + ' ' + item.lastName"
+          [nzValue]="item.id"
+        ></nz-option>
+      </nz-select>
+    </nz-form-item>
     <nz-form-item *ngIf="selectedValue == 1">
       <nz-form-label nzRequired nzFor="name_societe">nom societe</nz-form-label>
       <input
@@ -40,19 +56,9 @@
         nz-input
         formControlName="demande_name_societe"
       />
-      <div
-        *ngIf="f.demande_name_societe.touched && f.demande_name_societe.invalid"
-        class="alert alert-danger"
-      >
-        <div *ngIf="f.demande_name_societe.errors?.required">
-          <nz-alert
-            nzType="error"
-            nzShowIcon
-            nzMessage="demande_name_societe is required."
-          ></nz-alert>
-        </div>
-      </div>
+
     </nz-form-item>
+    <!--
     <nz-form-item *ngIf="selectedValue == 0">
       <nz-form-label nzRequired nzFor="name_societe">nom </nz-form-label>
       <input
@@ -73,9 +79,9 @@
           ></nz-alert>
         </div>
       </div>
-    </nz-form-item>
+    </nz-form-item> -->
 
-    <nz-form-item *ngIf="selectedValue == 1">
+    <!--   <nz-form-item *ngIf="selectedValue == 1">
       <nz-form-label nzRequired nzFor="name_societe">nom societe</nz-form-label>
       <input
         id="demande_matricule_fiscal_societe	"
@@ -124,7 +130,7 @@
           ></nz-alert>
         </div>
       </div>
-    </nz-form-item>
+    </nz-form-item> -->
 
     <nz-form-item>
       <nz-form-control [nzSpan]="12" [nzOffset]="5">
